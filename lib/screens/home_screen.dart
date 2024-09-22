@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -21,23 +23,47 @@ class HomeScreen extends StatelessWidget {
             statusBarBrightness: Brightness.dark,
           ),
         ),
-        body: const Padding(
-          padding: EdgeInsets.fromLTRB(40, 1.2 * kToolbarHeight, 40, 0),
+        body: Padding(
+          padding: const EdgeInsets.fromLTRB(0, 1.2 * kToolbarHeight, 0, 0),
           child: SizedBox(
-            height: MediaQuery.of(context).size.height,
-            child: Stack(
-              children: [
+              height: MediaQuery.of(context).size.height,
+              child: Stack(children: [
                 Align(
-                  alignment: AlignmentGeometry(3,-0.3),
+                    alignment: const AlignmentDirectional(1.0, -0.3),
+                    child: Container(
+                      height: 300,
+                      width: 300,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.deepPurple,
+                      ),
+                    )),
+                Align(
+                    alignment: const AlignmentDirectional(-1.0, -0.3),
+                    child: Container(
+                      height: 300,
+                      width: 300,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.deepPurple,
+                      ),
+                    )),
+                Align(
+                    alignment: const AlignmentDirectional(0.0, -1.2),
+                    child: Container(
+                      height: 300,
+                      width: 300,
+                      decoration: const BoxDecoration(
+                        color: Color(0xFFFFAB40),
+                      ),
+                    )),
+                BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 100.0, sigmaY: 100.0),
                   child: Container(
-                    height: 300,
-                    width: 300,
-                    decoration: ,
+                    decoration: const BoxDecoration(color: Colors.transparent),
                     )
-                  )
-              ]
-            )
-          ),
+                )
+              ])),
         ));
   }
 }
