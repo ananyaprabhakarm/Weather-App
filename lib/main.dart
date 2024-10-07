@@ -25,7 +25,8 @@ class MyApp extends StatelessWidget {
               ),
               child: const HomeScreen(),
             );
-          }else if(snap.hasError){
+          }
+          else if(snap.hasError){
             return Scaffold(
               body: Center(
                 child: Text('Error: ${snap.error}'),

@@ -123,7 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           Center(
                               child: Text(
-                            '${state.weather.temperature!.celsius!.round()}C',
+                            '${state.weather.temperature!.celsius!.round()}°C',
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 55,
